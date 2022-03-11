@@ -31,3 +31,4 @@ with open(f'{dictionary}', 'rb') as f:
         if attack_hash == digest:
             print(f'\033[1;32;40mCRACKED! {attack_hash} is {unparsed[i - 1]}')
             break
+print(f'\033[1;31;40mCould not crack the hash.')
