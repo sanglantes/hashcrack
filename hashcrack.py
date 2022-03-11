@@ -2,7 +2,7 @@ import argparse
 import codecs
 from hashlib import *
 parser = argparse.ArgumentParser(description=f'''HashCrack is a Python-based hash cracker with support for salts.
-Available hash functions are: {'MD5, MD5-SHA1, SHA1, SHA224, SHA256, SHA384, SHA512, SHA3_224, SHA3_256, SHA3_384, SHA3_512, BLAKE2B, BLAKE2S'.lower()}''')
+Available hash functions are: {'MD5, SHA1, SHA224, SHA256, SHA384, SHA512, SHA3_224, SHA3_256, SHA3_384, SHA3_512, BLAKE2B, BLAKE2S'.lower()}''')
 parser.add_argument('-H', nargs='?', metavar='hash', required=True, dest='hash', help='string to be cracked')
 parser.add_argument('-s', nargs='?', metavar='salt', required=False, dest='salt', help='salt')
 parser.add_argument('-t', nargs='?', metavar='function', required=True, dest='function', help='hash function')
