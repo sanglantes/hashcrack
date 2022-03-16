@@ -2,7 +2,13 @@ import argparse
 from sty import bg
 from hashlib import *
 
-
+print('''
+██╗░░██╗░█████╗░░██████╗██╗░░██╗░█████╗░██████╗░░█████╗░░█████╗░██╗░░██╗
+██║░░██║██╔══██╗██╔════╝██║░░██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║░██╔╝
+███████║███████║╚█████╗░███████║██║░░╚═╝██████╔╝███████║██║░░╚═╝█████═╝░
+██╔══██║██╔══██║░╚═══██╗██╔══██║██║░░██╗██╔══██╗██╔══██║██║░░██╗██╔═██╗░
+██║░░██║██║░░██║██████╔╝██║░░██║╚█████╔╝██║░░██║██║░░██║╚█████╔╝██║░╚██╗
+╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝''')
 parser = argparse.ArgumentParser(description=f'''HashCrack is a Python-based hash cracker with support for salts.
 Available hash functions are: {'MD5, SHA1, SHA224, SHA256, SHA384, SHA512, SHA3_224, SHA3_256, SHA3_384, SHA3_512, BLAKE2B, BLAKE2S'.lower()}''')
 parser.add_argument('-H', nargs='?', metavar='hash', required=True, dest='hash', help='string to be cracked')
@@ -27,7 +33,7 @@ with open(f'{dictionary}', 'rb') as f:
         if not args.salt:
             salt = b''
         digest = hash_type(pw+salt).hexdigest()
-        print(f'{unparsed[i]} {digest}')
+        print(f'{unparsed[i]}: {digest}')
         i = i + 1
         if attack_hash == digest:
             print(f'{bg.green}CRACKED! {attack_hash} is {unparsed[i - 1]}{bg.green}')
